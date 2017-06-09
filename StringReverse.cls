@@ -2,7 +2,7 @@ public class StringReverse
 {
     public static void printReverseStringUsingMethod(String originalString)
     {
-		String reverseString = originalString.reverse();
+	String reverseString = originalString.reverse();
     	System.debug('Reversed String is: '+reverseString);
     }
     public static void printReverseStringWithoutMethod(String originalString)
@@ -13,5 +13,5 @@ public class StringReverse
             reverseString = reverseString+originalString.substring(i,i+1);
         }
         system.debug('Reversed String is: '+reverseString );
-	}
+    }
 }
