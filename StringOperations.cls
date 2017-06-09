@@ -42,7 +42,7 @@ public class StringOperations {
     	System.debug('String after splitting:');
     	for (String word : arrayString) {
     		System.debug(word);
-		}
+	}
     	System.debug('----------------------------------------------------------');
     }
     
