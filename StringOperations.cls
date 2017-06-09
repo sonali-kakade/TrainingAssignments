@@ -4,7 +4,7 @@ public class StringOperations
     {
     	StringOperations operation = new StringOperations();
     	String inputString = 'Welcome to @pex Programming';
-		inputString = operation.replaceCharacter(inputString);
+	inputString = operation.replaceCharacter(inputString);
     	operation.printSubstring(inputString);
     	operation.splitString(inputString);
     	operation.removeSpaces(inputString);
