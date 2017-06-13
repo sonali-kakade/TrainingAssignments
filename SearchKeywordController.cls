@@ -1,14 +1,12 @@
-public with sharing class SearchKeywordController
-{
+public with sharing class SearchKeywordController {
     public String searchText {get; set;}
     public List<Account> accountRecords {get; set;}
     public List<Contact> contactRecords {get; set;}
     public List<Lead> leadRecords {get; set;}
     public List<Opportunity> opportunityRecords {get; set;}
 
-    public void searchRecords()
-    {
-        if(searchText.length() < 2) {
+    public void searchRecords() {
+        if(searchText.length() < 3) {
             ApexPages.addmessage(new ApexPages.message(ApexPages.severity.ERROR,
                                 'Please enter atleast 3 characters.'));
         } else {
