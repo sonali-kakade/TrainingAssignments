@@ -1,0 +1,75 @@
+<!-----------------------------------------------------------------------------------------------------------
+Assignment 1
+1. Create a Visualforce Page that will allow the user to search for the entered value across the
+following objects:
+• Accounts
+• Contacts
+• Leads
+• Opportunities
+
+2. Provide a text box that allows the user to enter a value to search. When the Search button is clicked
+the program should search across the above mentioned objects on the basis of whether of the
+following attributes and accordingly display the results.
+
+3. The search value should be compared with the following attributes on the above mentioned objects
+• Name
+• Last Name
+• First Name
+
+4. The search should not only look for exact matches i.e. If the search value entered is ‘test’ then
+records having the Name/Last Name/First Name as Test 1, Test 99 etc should also be returned.
+
+5. The page should only be partially updated, displaying the matching search results in different
+sections.
+
+6. Only relevant page blocks should be displayed. If a value matches the only Account and Lead
+records then only the page blocks for Account and Lead should be shown.
+------------------------------------------------------------------------------------------------------------>
+<apex:page controller="SearchKeywordController">
+    <apex:pageMessages id="messages"></apex:pageMessages>
+    <apex:form >
+    <apex:pageBlock title="Search">
+        <apex:pageBlockSection columns="2">
+            <apex:inputtext id="searchText" value="{!searchText}" label="Search Text"/>
+            <apex:commandButton value="Search" action="{!searchRecords}" reRender="search_list, messages"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:pageBlock id="search_list">
+
+        <apex:pageBlockSection title="Account List" id="account_list"
+                               rendered="{!AND(NOT(ISNULL(accountRecords)),accountRecords.size > 0)}">
+            <apex:pageBlockTable value="{!accountRecords}" var="record">
+                <apex:column value="{!record.Name}"/>
+                <apex:column value="{!record.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Contact List" id="contact_list"
+                               rendered="{!AND(NOT(ISNULL(contactRecords)),contactRecords.size > 0)}">
+            <apex:pageBlockTable value="{!contactRecords}" var="record">
+                <apex:column value="{!record.Name}"/>
+                <apex:column value="{!record.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Lead List" id="lead_list"
+                               rendered="{!AND(NOT(ISNULL(leadRecords)),leadRecords.size > 0)}">
+            <apex:pageBlockTable value="{!leadRecords}" var="record">
+                <apex:column value="{!record.Name}"/>
+                <apex:column value="{!record.Phone}"/>
+                <apex:column value="{!record.Company}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Opportunity List" id="opportunity_list"
+                               rendered="{!AND(NOT(ISNULL(opportunityRecords)),opportunityRecords.size > 0)}">
+            <apex:pageBlockTable value="{!opportunityRecords}" var="record">
+                <apex:column value="{!record.Name}"/>
+                <apex:column value="{!record.StageName}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

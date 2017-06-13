@@ -1,0 +1,33 @@
+<!-----------------------------------------------------------------------------------------------------------
+Assignment 2
+1. Query and display all the accounts in a tabular format on a visualforce page.
+2. Display the columns name, phone, address.
+3. The name should be a hyperlink and on click of the link display contacts and opportunity records
+related to the account in different page block tables.
+4. The page should be partially rendered and it should not reload.
+------------------------------------------------------------------------------------------------------------>
+<apex:page standardController="Account" recordSetVar="accounts">
+
+    <apex:form >
+        <apex:pageBlock title="Accounts">
+            <apex:pageBlockTable value="{!accounts}" var="account">
+                <apex:column headerValue="Name">
+                    <apex:commandLink value="{!account.Name}" reRender="lists">
+                        <apex:param name="Id" value="{!account.Id}" assignTo="{!id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!account.Phone}" />
+                <apex:column value="{!account.billingstreet}"/>
+                <apex:column value="{!account.billingCity}" />
+                <apex:column value="{!account.billingCountry}" />
+                <apex:column value="{!account.billingPostalCode}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:pageBlock title="Related Lists" id="lists">
+        <apex:relatedList list="Contacts" />
+        <apex:relatedList list="Opportunities" />
+    </apex:pageBlock>
+
+</apex:page>
