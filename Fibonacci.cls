@@ -1,24 +1,21 @@
-public class Fibonacci
-{
-    public static void printFibonacci(Integer input)
-    {
+/**************************************************************************************************
+Basic Programming
+Question-1:
+Method which will accept Integer parameter and print Fibonacci series upto that number.
+**************************************************************************************************/
+
+public class Fibonacci {
+    public static void printFibonacci(Integer input) {
         Integer firstNumber=0, secondNumber=1, thirdNumber, i;
-        if(input <= 0)
-        {
-        	System.debug('Please Provide Valid Input...');
-        }
-        else
-        {
-        	if(input == 1)
-        	{
+        if(input <= 0) {
+        	System.debug('Please Provide Valid Input.');
+        } else {
+        	if(input == 1) {
         		System.debug(firstNumber);
-        	}
-        	else
-        	{
+        	} else {
         		System.debug(firstNumber);
         		System.debug(secondNumber);
-        		for(i = 0; i < input-2; i++)
-        		{
+        		for(i = 0; i < input-2; i++) {
             		thirdNumber = firstNumber + secondNumber;
             		System.debug(thirdNumber);
             		firstNumber = secondNumber;

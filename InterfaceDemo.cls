@@ -1,4 +1,9 @@
-public interface InterfaceDemo
-{
+/**************************************************************************************************
+OOPS Concepts
+Question-4:
+Implement an abstract method.
+**************************************************************************************************/
+
+public interface InterfaceDemo {
     void sampleMethod();
 }
