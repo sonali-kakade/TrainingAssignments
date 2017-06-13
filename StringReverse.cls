@@ -6,7 +6,7 @@ Method to reverse the string.
 
 public class StringReverse {
     public static void printReverseStringUsingMethod(String originalString) {
-	String reverseString = originalString.reverse();
+	    String reverseString = originalString.reverse();
     	System.debug('Reversed String is: ' + reverseString);
     }
     public static void printReverseStringWithoutMethod(String originalString) {
