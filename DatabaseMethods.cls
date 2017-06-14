@@ -1,10 +1,21 @@
-/**************************************************************************************************
-Advanced concepts / Collections/SOQL Queries/DML Operations
-Question-7:
-Demonstrate the usage of Database.query and Database.search methods.
-**************************************************************************************************/
+/**
+ * @description: Advanced concepts / Collections/SOQL Queries/DML Operations - Question-7:
+ *               Demonstrate the usage of Database.query and Database.search methods.
+ * @author: Sonali Kakade
+ *
+ * @revision:
+ * Version      Date            Description
+ * ------------------------------------------------
+ * 1.0          12-May-2017     Initial revision.
+ **/
 
 public class DatabaseMethods {
+
+    /**
+     * @description: Method to Demonstrate the usage of Database.query method.
+     * @author: Sonali Kakade
+     * @date: 12-May-2017
+     **/
     public static void queryDemo() {
         String nameStartingWithU = 'u%';
         String query = 'SELECT Id, Name FROM Account WHERE Name LIKE :nameStartingWithU';
@@ -12,6 +23,11 @@ public class DatabaseMethods {
         System.debug('Accounts:' + acc);
     }
 
+    /**
+     * @description: Method to Demonstrate the usage of Database.search method.
+     * @author: Sonali Kakade
+     * @date: 12-May-2017
+     **/
     public static void searchDemo() {
         String nameStartingWithU = 'u%';
         String searchQuery = 'FIND \'test*\' IN ALL FIELDS RETURNING Account(id, name), Employee__c';
