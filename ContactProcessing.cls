@@ -1,5 +1,5 @@
 /**
- * @description: Advanced concepts / Collections/SOQL Queries/DML Operations - Question-1:
+ * @description: SOQL - Question-1:
  *               Query on All Contact records & add all to the List and print that list.
  * @author: Sonali Kakade
  *
@@ -17,7 +17,11 @@ public class ContactProcessing {
      * @date: 12-May-2017
      **/
     public static void processQuery() {
-        List<Contact> contactList = [Select Name, Birthdate, MobilePhone from Contact];
+        List<Contact> contactList = [Select Name
+                                          , Birthdate
+                                          , MobilePhone
+                                       from Contact];
+
         System.debug(contactList);
     }
 }

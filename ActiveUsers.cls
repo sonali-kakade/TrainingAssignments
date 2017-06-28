@@ -1,5 +1,5 @@
 /**
- * @description: Advanced concepts / Collections/SOQL Queries/DML Operations - Question-5:
+ * @description: SOQL - Question-2:
  *               Write a SOQL query to retrieve/print the User records where Active = true. Prepare the
  *               Map having User Id as key and User record as value.(Hint : Map<Id,User>)
  * @author: Sonali Kakade
@@ -18,7 +18,10 @@ public with sharing class ActiveUsers {
      * @date: 12-May-2017
      **/
     public static void displayActiveUsers() {
-        Map<Id, User> activeUsers = new Map<Id, User>([SELECT Name FROM User WHERE IsActive = true]);
+        Map<Id, User> activeUsers = new Map<Id, User>([SELECT Name
+                                                         FROM User
+                                                        WHERE IsActive = true]);
+
         System.debug(activeUsers);
     }
 }

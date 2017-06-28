@@ -17,8 +17,8 @@ public class DatabaseMethods {
      * @date: 12-May-2017
      **/
     public static void queryDemo() {
-        String nameStartingWithU = 'u%';
-        String query = 'SELECT Id, Name FROM Account WHERE Name LIKE :nameStartingWithU';
+        String nameStartingWith = 'u%';
+        String query = 'SELECT Id, Name FROM Account WHERE Name LIKE :nameStartingWith';
         List<Account> acc = Database.query(query);
         System.debug('Accounts:' + acc);
     }
@@ -29,7 +29,6 @@ public class DatabaseMethods {
      * @date: 12-May-2017
      **/
     public static void searchDemo() {
-        String nameStartingWithU = 'u%';
         String searchQuery = 'FIND \'test*\' IN ALL FIELDS RETURNING Account(id, name), Employee__c';
         List<List<sObject>> searchList = search.query(searchQuery);
         List<Account> acc = ((List<Account>)searchList[0]);

@@ -20,9 +20,15 @@ public with sharing class AssociatedContacts {
      * @date: 12-May-2017
      **/
     public static void fetchAssociatedContacts() {
-        List<Account> accountList = [Select id, name, (Select Name, Birthdate, MobilePhone
-                                     from Contacts) from Account];
-        for(Account accountRecord: accountList) {
+        List<Account> accountList = [Select id
+                                          , name
+                                          , (Select Name
+                                                  , Birthdate
+                                                  , MobilePhone
+                                               from Contacts)
+                                       from Account];
+
+        for(Account accountRecord : accountList) {
             System.debug(accountRecord + ' ' + accountRecord.contacts);
         }
     }

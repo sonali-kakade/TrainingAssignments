@@ -30,8 +30,8 @@ public with sharing class CreateRecords {
             insert contactRecord;
 
             Lead leadRecord = new Lead(FirstName = 'Swapnil',
-                                        LastName = 'Padwal',
-                                        MobilePhone = '9780344848');
+                                       LastName = 'Padwal',
+                                       MobilePhone = '9780344848');
             insert leadRecord;
 
             Opportunity opportunityRecord = new Opportunity(Name = 'Noopur',
