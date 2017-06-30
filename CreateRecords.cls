@@ -1,10 +1,21 @@
-/**************************************************************************************************
-Advanced concepts / Collections/SOQL Queries/DML Operations
-Question-3:
-Create a Account , Contact, Lead , Opportunity record through DML operations.
-**************************************************************************************************/
+/**
+ * @description: Advanced concepts / Collections/SOQL Queries/DML Operations - Question-3:
+ *               Create a Account , Contact, Lead , Opportunity record through DML operations.
+ * @author: Sonali Kakade
+ *
+ * @revision:
+ * Version      Date            Description
+ * ------------------------------------------------
+ * 1.0          12-May-2017     Initial revision.
+ **/
 
 public with sharing class CreateRecords {
+
+    /**
+     * @description: Method to create account, contact, lead and opportunity records.
+     * @author: Sonali Kakade
+     * @date: 12-May-2017
+     **/
     public static void insertRecords() {
         try {
             Account accountRecord = new Account(Name = 'Espl');
@@ -19,8 +30,8 @@ public with sharing class CreateRecords {
             insert contactRecord;
 
             Lead leadRecord = new Lead(FirstName = 'Swapnil',
-                                        LastName = 'Padwal',
-                                        MobilePhone = '9780344848');
+                                       LastName = 'Padwal',
+                                       MobilePhone = '9780344848');
             insert leadRecord;
 
             Opportunity opportunityRecord = new Opportunity(Name = 'Noopur',
